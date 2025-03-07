@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A46 Footgear E-Bundle</title>
-    <link rel="stylesheet" href="styless.css">
+    <link rel="stylesheet" href="products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Add your custom styles here */
-    </style>
 </head>
 <body>
     <header>
@@ -243,6 +240,35 @@
             </div>
         </div>
     </footer>
-    <script src="scriptss.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buyButtons = document.querySelectorAll(".buy");
+            buyButtons.forEach(button => {
+                button.addEventListener("click", function() {
+                    const parent = this.parentElement;
+                    const paymentLink = parent.getAttribute("data-payment-link");
+                    if (paymentLink) {
+                        window.open(paymentLink, "_blank");
+                    } else {
+                        alert("Payment link not available.");
+                    }
+                });
+            });
+
+            document.querySelectorAll(".controls .next").forEach((btn, index) => {
+                btn.addEventListener("click", function() {
+                    const slider = document.querySelectorAll(".category-slider")[index];
+                    slider.scrollBy({ left: 200, behavior: "smooth" });
+                });
+            });
+
+            document.querySelectorAll(".controls .prev").forEach((btn, index) => {
+                btn.addEventListener("click", function() {
+                    const slider = document.querySelectorAll(".category-slider")[index];
+                    slider.scrollBy({ left: -200, behavior: "smooth" });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
