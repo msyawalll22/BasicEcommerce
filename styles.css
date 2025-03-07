@@ -79,7 +79,7 @@ nav a {
 /* Slider Styles */
 .slider {
     position: relative;
-    max-width: 80%;
+    max-width: 100%; /* Adjust width as needed */
     margin: 0 auto;
     overflow: hidden;
 }
@@ -92,13 +92,18 @@ nav a {
 .slide {
     min-width: 100%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide img {
-    width: 100%;
-    height: auto;
+    width: 30%; /* Adjust to make the content smaller or bigger */
+    max-height: 400px; /* Set a max height for consistency */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio */
 }
 
+/* Navigation Button Styles */
 .controls {
     position: absolute;
     top: 50%;
@@ -119,6 +124,7 @@ nav a {
 .controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
 
 /* Footer Styles */
 footer {
